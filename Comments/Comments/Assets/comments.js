@@ -134,8 +134,8 @@
 
         var onCommentPosted = function (result) {
             var comment = JSON.parse(result);
-            comment.ImgUrl = "http://www.gravatar.com/avatar/" + comment.PosterEmailHash + "?size=56&r=g";
-            comment.FormatedPostTime = new Date(comment.PostTime.replace("T", " ") + " UTC").toLocaleString();
+            comment.ImgUrl = "http://www.gravatar.com/avatar/" + comment.PosterEmailHash + "?size=26&r=g";
+            comment.FormatedPostTime = new Date(comment.PostTime).toLocaleString();
             comment.updated = ko.observable(false);
             if (!comment.Approved) {
                 self.displayRequiresApproval(true);
@@ -218,8 +218,8 @@
                 self.comments([]);
                 var comments = JSON.parse(json);
                 for (var i = 0; i < comments.length; i++) {
-                    comments[i].ImgUrl = "http://www.gravatar.com/avatar/" + comments[i].PosterEmailHash + "?size=56&r=g";
-                    comments[i].FormatedPostTime = new Date(comments[i].PostTime.replace("T", " ") + " UTC").toLocaleString();
+                    comments[i].ImgUrl = "http://www.gravatar.com/avatar/" + comments[i].PosterEmailHash + "?size=26&r=g";
+                    comments[i].FormatedPostTime = new Date(comments[i].PostTime).toLocaleString();
                     comments[i].updated = ko.observable(false);
                 }
                 self.comments(comments);

@@ -27,7 +27,7 @@ namespace Comments
             _actionHandlers = GetActions().ToList();
         }
 
-        public async Task Invoke(HttpContext ctx)
+        public virtual async Task Invoke(HttpContext ctx)
         {
             if (ctx.Request.Path.StartsWithSegments(_options.BaseUrl))
             {

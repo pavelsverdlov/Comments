@@ -269,8 +269,9 @@ namespace Comments.Services
             }
             return models[0];
         }
-        
-        private string DateTimeToString(DateTime dt) => dt.ToString("yyyy-MM-dd HH:mm:ss");
+
+        //to ISO-8601
+        private string DateTimeToString(DateTime dt) => dt.ToString("O");
 
     }
 }
